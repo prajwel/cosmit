@@ -1,0 +1,36 @@
+[build-system]
+requires = ["hatchling >= 1.27.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "cosmit"
+dynamic = ["version"]
+authors = [
+  { name="Prajwel Joseph", email="prajwel.pj@gmail.com" },
+]
+description = "Cosmic-ray tools for AstroSat/UVIT"
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+license = "Apache-2.0"
+license-files = ["LICEN[CS]E*"]
+
+dependencies = [
+    "numpy",
+    "matplotlib",
+    "astropy",
+    "scipy"
+]
+
+[project.urls]
+Homepage = "https://github.com/prajwel/cosmit"
+Issues = "https://github.com/prajwel/cosmit/issues"
+
+[tool.hatch.version]
+path = "src/cosmit/cosmit.py"
+
+[project.scripts]
+cosmit = "cosmit.cli:main"
